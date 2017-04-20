@@ -3,9 +3,12 @@ go:
 - 1.8.1
 script: "./build.sh"
 
+before_deploy: "ls"
+
 deploy:
   provider: releases
   skip_cleanup: true
+  file_glob: true
   api_key:
     secure: ybp0Z/a30DKSEMZCA4sHqsYBp3V2jdTIDMIWblD1We1i0hylOViAu6ILU2YDZhyyPLWQA3Qu5Vf98jWwGmnQ27bH7gxad/m3Dfn7NjQ/0cqqaXsliWMptvhH+4Z07xDXOMXHAsj80u9MMCVe4q8lBXf8gxmXlK+3ia9PZbHTXechhc9RlSlHNAYw01DmyTZTphXs+gTSS9xGXQb/at6Tp6EM/YYjYd9UgBWXOFRZSf0dIFdaZU0DAPlnQ59ycRsAqc7QSFWQ8ExxX9FHmfdOggdOsJtyvfs4djDGltv3G9ZiQfyY5eiMqDS3+hlYVJ6GFUUpVL/vX3BW5fCIR3ru3mRKGOvw/hAIoaGwidzRtyzn8VV5+3YxP/P8dELjDgVeGj89GWlxPijzxjPsQsjYIlMBoB/aHGnL0hlvM3BvKAattMsZEt7xlEIgPQECKslwWu2ZWwh+Q1/IiCeZ+Ey9OnNlp05ix3diywNo3Z6vINsmUgq85cW8VgO80rUHHLOu3BMtLd2OmgAuEqq6nXzBjhugLfI6Z2I4P8e133XjhN46jPB+6PyXsnSM6s9N/Y9vq1i71Khe5eFGkULi2A+bmKauCe2O+2KQgPyfMmhuC4IJd9gQd8ybRog0pF2oYjUPorPfLA5pDks2AfTNKjAWetyr+lQYffCqiTRoYIU7noc=
   file: bin/*
